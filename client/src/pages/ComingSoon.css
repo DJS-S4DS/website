@@ -1,0 +1,12 @@
+@keyframes move-lr {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-200vw);
+    }
+  }
+
+  .animate-move-lr {
+      animation: move-lr 7s linear infinite
+  }

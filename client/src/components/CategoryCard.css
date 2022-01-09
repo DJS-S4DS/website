@@ -1,0 +1,75 @@
+/* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+  }  */
+.child{
+    position: absolute;
+    right: -70%;
+    opacity: 0.15;
+}
+.parent:hover .child{
+  transform: skewX(45deg) translateX(-20rem);
+  transition: 0.4s;
+}
+.skew{
+  transform: skewX(45deg) ;
+  transition: 0.4s;
+}
+.strip2{
+    width: 66.67%;
+    transition: 0.4s;
+}
+.strip1{
+    width: 16.67%;
+    transition: 0.4s;
+}
+.parent:hover .strip2{
+    transform: scaleX(0.249);
+    transition: 0.4s;
+}
+.parent:hover .strip1{
+    transform: scaleX(4.016);
+    transition: 0.4s;
+}
+.parent{
+    transition: 0.2s;
+}
+.parent:hover{
+    transition: 0.2s;
+    transition-delay: 0.2s;
+}
+.name-bg{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+    opacity: 0;
+    transition: 0.4s;
+}
+.name{
+    opacity: 0;
+    transition: 0.3s;
+}
+.parent:hover .name-bg{
+    opacity: 1;
+    -webkit-transition: opacity 0.3s linear;
+    -ms-transition: opacity 0.3s linear;
+    transition: opacity 0.3s linear;
+}
+.parent:hover .name{
+    opacity: 0.85;
+    -webkit-transition: opacity 0.3s linear;
+    -ms-transition: opacity 0.3s linear;
+    transition: opacity 0.3s linear;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.snap-parent {
+    scroll-snap-type: y mandatory;
+}
+.snap-child {
+    scroll-snap-align: start;
+}

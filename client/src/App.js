@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import ComingSoon from './pages/ComingSoon';
+import Members from './pages/Members';
+import Sponsors from './pages/Sponsors';
+import Navbar from './components/Navbar';
+import { AnimatePresence } from 'framer-motion';
+import './App.css'
 function App() {
+  const location = useLocation()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <Navbar />
+        <AnimatePresence exitBeforeEnter initial={false}>
+          <Routes location={location} key={location.pathname}>
+              <Route key="home" path="/"  element= {<ComingSoon />}/>
+              <Route key="team" path="/members"  element= {<Members />}/>
+              <Route key="sponsors" path="/sponsors"  element= {<Sponsors />}/>
+          </Routes>
+        </AnimatePresence>
     </div>
   );
 }
