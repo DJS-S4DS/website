@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CategoryCard from "../components/CategoryCard";
 import AdminCard from "../components/AdminCard";
-import YearButton from "../components/YearButton";
+//import YearButton from "../components/YearButton";
 import { collection, getDocs } from "firebase/firestore";
 import db from "../firebase/firebase";
 import Footer from "../components/Footer";
@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 
 
 function Members() {
+
+  /* Member schema */
   let allMembers = {
     admin: { core: [] },
     editorial: { core: [], co_comm: [] },
@@ -20,7 +22,7 @@ function Members() {
     publicity: { core: [], co_comm: [] },
   };
 
-  const [toggle, setToggle] = useState(true);
+  const [userInfoLoaded, setUserInfoLoaded] = useState(false);
   const [allMemberData, setallMemberData] = useState(allMembers);
 
   const reducer = (action) => {
@@ -47,15 +49,16 @@ function Members() {
     });
     getDocs(collection(db, "members/2021-22/core")).then((value)=>{
         handleMembers(value , "core")
-        setToggle(!toggle)
+        setUserInfoLoaded(true)
     });
     console.log("work started");
     // eslint-disable-next-line
   }, []);
 
-  const loadYear = () => {
+  /* Used for year button */
+  /* const loadYear = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  }; */
 
   console.log(allMemberData);
 
@@ -65,13 +68,14 @@ function Members() {
       {/* <div className='bg-transparent w-full h-[4rem]'></div> */}
       <motion.div
       initial={{y:0}}
-      animate={{y:-1000}}
+      animate={{y:(userInfoLoaded ? -1000 : 0)}}
       exit={{y:0}}
       transition={{type:"tween"}}
-      className="h-full w-full bg-black fixed z-50 top-0"
+      className="h-screen w-full bg-black fixed z-50 top-0"
       ></motion.div>
-      <YearButton handleYearChange={loadYear} />
-      <div className="flex flex-col items-center w-full h-auto bg-transparent">
+      {/* No year button for this year 2021-22 */}
+      {/* <YearButton handleYearChange={loadYear} /> */}
+      <div className="flex flex-col items-center w-full h-auto bg-transparent text-gray-200">
         {Object.entries(allMemberData).map((item, index) => {
           return (
 

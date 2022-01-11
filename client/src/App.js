@@ -17,6 +17,7 @@ function App() {
               <Route key="home" path="/"  element= {<ComingSoon />}/>
               <Route key="team" path="/members"  element= {<Members />}/>
               <Route key="sponsors" path="/sponsors"  element= {<Sponsors />}/>
+              {/* TODO: Add other routes */}
           </Routes>
         </AnimatePresence>
     </div>
