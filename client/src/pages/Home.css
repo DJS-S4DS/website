@@ -1,0 +1,3 @@
+.rounded-border{
+    clip-path: path('m 0 12 m 0 0 l 12 0 v -12 a -10 -10 0 0 1 -12 12');
+}

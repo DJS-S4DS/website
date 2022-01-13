@@ -64,7 +64,7 @@ function Members() {
 
   return (
     <div
-      className="bg-gradient-to-tr from-black via-indigo-800 to-fuchsia-600 pt-[4rem]"> 
+      className="bg-gradient-to-tr from-black via-indigo-800 to-fuchsia-600 pt-[4rem]">
       {/* <div className='bg-transparent w-full h-[4rem]'></div> */}
       <motion.div
       initial={{y:0}}
