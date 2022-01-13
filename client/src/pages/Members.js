@@ -3,7 +3,7 @@ import CategoryCard from "../components/CategoryCard";
 import AdminCard from "../components/AdminCard";
 //import YearButton from "../components/YearButton";
 import { collection, getDocs } from "firebase/firestore";
-import db from "../firebase/firebase";
+import db from "../firebase/Firebase";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 
